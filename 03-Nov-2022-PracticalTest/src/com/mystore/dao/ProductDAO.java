@@ -23,17 +23,10 @@ public class ProductDAO {
 	{
 		for(int i = 0; i < productArr.length;i++)
 		{
-			if(productArr[i] == null) 
-			{
-				break;
-			}
-			else
-			{
-				if(productArr[i].getProductName().startsWith(s))
+			if(productArr[i].getProductName().startsWith(s))
 			{
 				productArr1[j] = productArr[i];
 				j++;
-			}
 			}
 		}
 		return productArr1;
