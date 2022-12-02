@@ -35,9 +35,11 @@ public class ProductView {
 		System.out.println("The Products with same First Letter are: ");
 		for(int i = 0; i < p1.length;i++)
 		{
-			if(p1[i] != null)
+			if(p1[i] != null) {
+				System.out.println(p1[i].getProductId());
 				System.out.println(p1[i].getProductName());
-			else
+				System.out.println(p1[i].getProductPrice());
+			}else
 				break;
 		}
 	}
