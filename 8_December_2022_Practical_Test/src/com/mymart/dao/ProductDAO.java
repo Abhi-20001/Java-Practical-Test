@@ -47,7 +47,7 @@ public class ProductDAO {
 		}
 	}
 	
-	public LinkedList<Product> deleteProductByID(int ID)
+	public void deleteProductByID(int ID)
 	{
 		for(Product p1 : l)
 		{
@@ -56,6 +56,5 @@ public class ProductDAO {
 				l.remove(p1);
 			}
 		}
-		return l;
 	}
 }

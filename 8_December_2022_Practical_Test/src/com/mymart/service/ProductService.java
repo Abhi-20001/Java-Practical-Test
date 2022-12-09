@@ -33,11 +33,9 @@ public class ProductService {
 		dao.searchProductByID(ID);
 	}
 	
-	public LinkedList<Product> deleteProductByIDService(int ID)
+	public void deleteProductByIDService(int ID)
 	{
-		LinkedList<Product> l = new LinkedList<>();
-		l = dao.deleteProductByID(ID);
-		return l;
+		dao.deleteProductByID(ID);
 	}
 
 }
