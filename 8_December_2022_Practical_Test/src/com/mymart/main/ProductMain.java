@@ -1,58 +1,44 @@
 package com.mymart.main;
 
-import java.util.LinkedList;
-
-import com.mymart.dao.ProductDAO;
-import com.mymart.model.Product;
+import com.mymart.view.ProductView;
 
 public class ProductMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		java.util.Scanner sc = new java.util.Scanner(System.in);
-		int a = sc.nextInt();
+		ProductView pv = new ProductView();
 		
-		// LinkedList<Product> l = new LinkedList<Product>();
+		int choice;
 		
-		Product p = new Product(1,"Abhi",222.33);
-		
-		ProductDAO dao = new ProductDAO();
-		
-		dao.addProduct(p);
-		
-		LinkedList<Product> l = dao.getAllProducts();
-		
-		/*for(Product p1 : l)
-			System.out.println(p1.getProductId()+" "+ p1.getProductName()+" "+ p1.getProductPrice());
-		
-		for(Product p1 :l)
-			System.out.println(p1.getProductId()+" "+ p1.getProductName()+" "+ p1.getProductPrice());
-		
-		LinkedList<Product> l2 = dao.searchProductNameStartingWithLetter("A");
-		System.out.println(l2);*/
-		
-		String s = dao.searchProductByID(0);
-		System.out.println(s);
-		
-		/* do {
-		
-			switch(a)
+		do{
+			java.util.Scanner sc = new java.util.Scanner(System.in);
+			
+			System.out.println("1.Add Product");
+			System.out.println("2.View All Products");
+			System.out.println("3.View all products starting with letter");
+			System.out.println("4.View all products based on ID");
+			System.out.println("5.Delete product based on ID");
+			System.out.println("0.Exit\n");
+			
+			System.out.println("Enter Your Choice");
+			choice = sc.nextInt();
+			
+			switch(choice)
 			{
-			case 1:System.out.println("Add New Product");
+			case 1:pv.addProduct();
 			break;
-			case 2:System.out.println("View All Products");
+			case 2:pv.displayAllProduct();
 			break;
-			case 3:System.out.println("View all products starting with letter");
+			case 3:pv.displayAllProductsStartingWithLetter();
 			break;
-			case 4:System.out.println("View all products based on ID");
+			case 4:pv.displayProductByID();
 			break;
-			case 5:System.out.println("Delete product based on ID");
+			case 5:pv.removeProductByID();
 			break;
-			case 6:System.out.println("Exit");
+			case 0:
 			break;
 			}
-		}while(a != 0);
-	*/
-}
+		}while(choice != 0);
+	}
 }

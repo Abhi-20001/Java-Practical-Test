@@ -10,33 +10,35 @@ public class ProductService {
 	
 	ProductDAO dao = new ProductDAO();
 	
-	void addProductService(Product p)
+	public void addProductService(Product p)
 	{
 		dao.addProduct(p);
 	}
 	
-	LinkedList<Product> getAllProductService()
+	public LinkedList<Product> getAllProductService()
 	{
 		LinkedList<Product> s = dao.getAllProducts();
 		return s;
 	}
 	
-	LinkedList<Product> searchProductNameStartingWithLetterService(String s)
+	public LinkedList<Product> searchProductNameStartingWithLetterService(String s)
 	{
 		LinkedList<Product> l = new LinkedList<>();
 		l.addAll(dao.searchProductNameStartingWithLetter(s));
 		return l;
 	}
 	
-	String searchProductByIDService(int ID)
+	public String searchProductByIDService(int ID)
 	{
 		String s = dao.searchProductByID(ID);
 		return s;
 	}
 	
-	LinkedList<Product> deleteProductByIDService(int ID)
+	public LinkedList<Product> deleteProductByIDService(int ID)
 	{
-		
+		LinkedList<Product> l = new LinkedList<>();
+		l = dao.deleteProductByID(ID);
+		return l;
 	}
 
 }
