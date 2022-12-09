@@ -4,6 +4,7 @@ import com.mygame.service.*;
 public class GameView {
 	
 	GameService s = new GameService();
+	int value[] = new int[10];
 	
 	
 	public String[] displayCityNamesWithBlanks()
@@ -15,23 +16,20 @@ public class GameView {
 		for(int i = 0 ; i < c.length; i++)
 		{
 			int num = c[i].length();
+			int val[] = v.generateRandom(num);
 			int k = 0;
-			// int randomArray[]= null;
-			char arr[]= c[i].toCharArray();
 			
-			while(k != 3)
+			char arr[]= c[i].toCharArray();
+				
+			for(int j=0; j < arr.length;j++)
 			{
-				int val = v.generateRandom(num);
-				
-				for(int j=0; j < arr.length;j++)
+				for(int l = 0; l <= val.length; l++)
 				{
-					if( i == val)
+					if( j == val[l])
 					{
-						arr[i] = ' ';
-					}		
+							arr[j] = ' ';
+					}
 				}
-				
-				k++;
 			}
 			c[i] = String.valueOf(arr);
 		}
@@ -47,9 +45,9 @@ public class GameView {
 		int i = 0;
 		
 		java.util.Random random = new java.util.Random();
-		while(i != max/3 )
+		while(i != n/3 )
 		{
-			int value[i] = (int) (random.nextInt(max - min) + min);
+			int value = (int) (random.nextInt(max - min) + min);
 		}
 		return value;
 	}
