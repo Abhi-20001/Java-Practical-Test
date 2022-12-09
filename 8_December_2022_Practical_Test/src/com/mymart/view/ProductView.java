@@ -59,8 +59,7 @@ public class ProductView {
 		System.out.println("Enter the ID :");
 		int ID = scanner.nextInt();
 		
-		String s = ps.searchProductByIDService(ID);
-		System.out.println(s);
+		ps.searchProductByIDService(ID);
 	}
 	
 	public void removeProductByID()

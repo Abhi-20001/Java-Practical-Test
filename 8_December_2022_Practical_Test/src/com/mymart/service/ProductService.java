@@ -28,10 +28,9 @@ public class ProductService {
 		return l;
 	}
 	
-	public String searchProductByIDService(int ID)
+	public void searchProductByIDService(int ID)
 	{
-		String s = dao.searchProductByID(ID);
-		return s;
+		dao.searchProductByID(ID);
 	}
 	
 	public LinkedList<Product> deleteProductByIDService(int ID)

@@ -31,7 +31,7 @@ public class ProductDAO {
 		return l2;
 	}
 	
-	public String searchProductByID(int ID)
+	public void searchProductByID(int ID)
 	{
 		int n = ID;
 		String s = new String();
@@ -39,10 +39,12 @@ public class ProductDAO {
 		{
 			if(p1.getProductId()==n)
 			{
-				s = p1.getProductId()+" " + p1.getProductName() +" " + p1.getProductPrice();
+				System.out.println("The Product Details are :");
+				System.out.println("The Product ID is :"+p1.getProductId()); 
+				System.out.println("The Product Name is :"+ p1.getProductName()); 
+				System.out.println("The Product Price is :"+ p1.getProductPrice());
 			}
 		}
-		return s;
 	}
 	
 	public LinkedList<Product> deleteProductByID(int ID)
