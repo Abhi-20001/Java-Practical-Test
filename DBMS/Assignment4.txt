@@ -1,0 +1,56 @@
+Assignemt No : 04
+Assignemnt Name : Where and use of operators like, in, is, is not
+
+select name from emp where role in(select role name form role where role = 'Java Dev');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'form role where role = 'Java Dev')' at line 1
+mysql> select name from emp where role in(select role from emp where role = 'Java Dev');
++-------+
+| name  |
++-------+
+| Abhi  |
+| Kanha |
++-------+
+2 rows in set (0.01 sec)
+
+mysql> select * from rmp limit 1,3;
+ERROR 1146 (42S02): Table 'info.rmp' doesn't exist
+mysql> select * from emp limit 1,3;
++-----+-------+--------------+---------+
+| id  | name  | role         | salary  |
++-----+-------+--------------+---------+
+| 102 | Arish | Cpp Dev      |  700000 |
+| 103 | Kanha | Java Dev     |  800000 |
+| 104 | Om    | Construction | 1000000 |
++-----+-------+--------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select name from emp where salary between 600000 800000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '800000' at line 1
+mysql> select * name from emp where salary between 600000 and 800000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'name from emp where salary between 600000 and 800000' at line 1
+mysql> select name from emp where salary between 600000 and 800000;
++-------+
+| name  |
++-------+
+| Abhi  |
+| Arish |
+| Kanha |
++-------+
+3 rows in set (0.00 sec)
+
+mysql> select name from emp where role is null;
+Empty set (0.00 sec)
+
+mysql> select name from emp where role like 'Dev';
+Empty set (0.00 sec)
+
+mysql> select name from emp where role like 'Java Dev';
++-------+
+| name  |
++-------+
+| Abhi  |
+| Kanha |
++-------+
+2 rows in set (0.00 sec)
+
+mysql>

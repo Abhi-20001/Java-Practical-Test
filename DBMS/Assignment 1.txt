@@ -1,0 +1,62 @@
+Assignment No : 1
+Assignment  Name : Introduction of Database, Creating database and tables.
+
+
+mysql> use info;
+Database changed
+mysql> create table emp(
+    -> id int not null,
+    -> name varchar(30) not null,
+    -> role varchar(20) not null,
+    -> salary float not null,
+    -> primary key(id),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 7
+mysql> create table emp(
+    -> id int not null,
+    -> name varchar(30) not null,
+    -> role varchar(20) not null,
+    -> salary float not null,
+    -> primary key(id)
+    -> );
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> insert into emp values(101,'Abhi','Java Dev',600000.00);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp values(102,'Arish','Cpp Dev',700000.00);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into emp values(103,'Kanha','Java Dev',100000.00);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into emp values(103,'Om','Construction',1000000.00);
+ERROR 1062 (23000): Duplicate entry '103' for key 'emp.PRIMARY'
+mysql> insert into emp values(104,'Om','Construction',1000000.00);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from emp;
++-----+-------+--------------+---------+
+| id  | name  | role         | salary  |
++-----+-------+--------------+---------+
+| 101 | Abhi  | Java Dev     |  600000 |
+| 102 | Arish | Cpp Dev      |  700000 |
+| 103 | Kanha | Java Dev     |  100000 |
+| 104 | Om    | Construction | 1000000 |
++-----+-------+--------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update emp set salary=800000.00 where id = 103;
+Query OK, 1 row affected (0.37 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from emp;
++-----+-------+--------------+---------+
+| id  | name  | role         | salary  |
++-----+-------+--------------+---------+
+| 101 | Abhi  | Java Dev     |  600000 |
+| 102 | Arish | Cpp Dev      |  700000 |
+| 103 | Kanha | Java Dev     |  800000 |
+| 104 | Om    | Construction | 1000000 |
++-----+-------+--------------+---------+
+4 rows in set (0.00 sec)
