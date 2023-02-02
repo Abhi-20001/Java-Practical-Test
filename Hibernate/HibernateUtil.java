@@ -23,7 +23,7 @@ public class HibernateUtil {
                 settings.put(AvailableSettings.DRIVER, "com.mysql.cj.jdbc.Driver");
                 settings.put(AvailableSettings.URL, "jdbc:mysql://localhost:3306/collectiondb?useSSL=false");
                 settings.put(AvailableSettings.USER, "root");
-                settings.put(AvailableSettings.PASS, "Omkar@123");
+                settings.put(AvailableSettings.PASS, "root");
                 settings.put(AvailableSettings.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 
                 settings.put(AvailableSettings.SHOW_SQL, "true");
